@@ -143,9 +143,10 @@
                         <span class="phrase">
                             Συντελεστές
                         </span>
-                    </span></div>
+                    </span>
+                </div>
                 <div class="journalists">
-                    <div class="journalistsCont slider">
+                    <div class="journalistsCont">
                         <div class="journalist">
                             <div class="image"><img src="images/journalist/Pliakos.jpg" alt="Πλιάκος"></div>
                             <h6 class="journalistName">Φώτης Πλιάκος</h6>
@@ -240,9 +241,9 @@
                                 τομέα της τακτικής και της ανάλυσης αντιπάλων.</p>
                         </div>
                     </div>
-                    <div class="arrowSection">
+                    <!-- <div class="arrowSection">
                         <img src="images/arrow-section-black.png" alt="arrow">
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </section>
@@ -524,57 +525,98 @@
 
 
         // Slider Journalist
-        /* const slider = document.querySelector(".slider");
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+        const slider = section3
+        const journalists = slider.querySelector('.journalists')
+        const journalistCont = journalists.querySelector('.journalistsCont')
 
-        slider.addEventListener("mousedown", e => {
-            e.preventDefault();
-            isDown = true;
-            slider.classList.add("active");
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
 
-        });
+        let pressed = false,
+            startX, x
 
-        slider.addEventListener("touchstart", e => {
-            e.preventDefault();
-            isDown = true;
-            slider.classList.add("active");
-            startX = e.touches[0].pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
+        let windowSize = window.innerWidth
+        window.addEventListener('resize', () => {
+            windowSize = window.innerWidth
+            journalists.style.left = '0px'
+            windowSize > 1670 ? slider.style.cursor = 'auto' : null
 
-        slider.addEventListener("mouseleave", () => {
-            isDown = false;
-            slider.classList.remove("active");
-        });
-        slider.addEventListener("touchend", () => {
-            isDown = false;
-            slider.classList.remove("active");
-        });
+        })
 
-        slider.addEventListener("mouseup", () => {
-            isDown = false;
-            slider.classList.remove("active");
 
-        });
+        slider.addEventListener('mousedown', e => {
+            windowSize < 1670 ? pressed = true : null
+            startX = e.offsetX - journalists.offsetLeft
+        })
 
-        slider.addEventListener("mousemove", e => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 5;
-            slider.scrollLeft = scrollLeft - walk;
-        });
-        slider.addEventListener("touchmove", e => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.touches[0].pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
-            slider.scrollLeft = scrollLeft - walk;
-        }); */
+        slider.addEventListener('touchstart', e => {
+            windowSize < 1670 ? pressed = true : null
+            startX = e.offsetX - journalists.offsetLeft
+        })
+
+
+
+
+
+        slider.addEventListener('mouseenter', () => {
+            if (windowSize < 1670) {
+                slider.style.cursor = 'grab'
+            }
+        })
+
+        slider.addEventListener('mouseup', () => {
+            if (windowSize < 1670) {
+                slider.style.cursor = 'grab'
+            }
+        })
+
+        window.addEventListener('mouseup', () => {
+            pressed = false
+        })
+
+        window.addEventListener('touchend', () => {
+            pressed = false
+        })
+
+
+
+
+        slider.addEventListener('mousemove', e => {
+            if (e.clientY > slider.getBoundingClientRect().top && e.clientY < journalistCont.getBoundingClientRect().top) {
+                slider.style.cursor = 'auto'
+            } else {
+                slider.style.cursor = 'grab'
+            }
+
+            if (!pressed) return
+            e.preventDefault()
+            x = e.offsetX
+            journalists.style.left = `${x - startX}px`
+            checkBoundary()
+        })
+
+        slider.addEventListener('touchmove', e => {
+            if (!pressed) return
+            e.preventDefault()
+            x = e.offsetX
+            journalists.style.left = `${x - startX}px`
+            checkBoundary()
+        })
+
+
+
+
+
+
+        function checkBoundary() {
+            let outer = slider.getBoundingClientRect()
+            let inner = journalists.getBoundingClientRect()
+
+            if (parseInt(journalists.style.left) > 0) {
+                journalists.style.left = '0px'
+            } else if (inner.right < outer.right) {
+                journalists.style.left = `-${inner.width - outer.width}px`
+            }
+        }
+
     </script>
 </body>
 
