@@ -1208,6 +1208,9 @@ main footer .down div {
 }
 
 @media only screen and (max-width: 950px) {
+  main .header2 {
+    padding: 20px;
+  }
   main .header2 .nav2 {
     display: none;
   }
