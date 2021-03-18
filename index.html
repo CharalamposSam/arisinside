@@ -78,6 +78,9 @@
             <div class="arrowSection">
                 <img src="images/arrow-section.png" alt="arrow">
             </div>
+            <div class="issuuMobile">
+                → Αγορά μέσω<img src="images/issuuMobile.png" alt="issuu">
+            </div>
         </section>
 
         <section class="section23">
@@ -549,7 +552,7 @@
 
         slider.addEventListener('touchstart', e => {
             windowSize < 1670 ? pressed = true : null
-            startX = e.offsetX - journalists.offsetLeft
+            startX = e.targetTouches[0].pageX - journalists.offsetLeft
         })
 
 
@@ -596,7 +599,7 @@
         slider.addEventListener('touchmove', e => {
             if (!pressed) return
             e.preventDefault()
-            x = e.offsetX
+            x = e.targetTouches[0].pageX
             journalists.style.left = `${x - startX}px`
             checkBoundary()
         })
