@@ -415,6 +415,26 @@ main .section1 .arrowSection img {
           animation: arrow-section 2s ease-in-out infinite;
 }
 
+main .section1 .issuuMobile {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  width: 120px;
+  height: 70px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-family: mediumItalic;
+  font-size: 13px;
+  padding: 12px 0;
+}
+
+main .section1 .issuuMobile img {
+  width: 88px;
+  display: block;
+}
+
 main .section23 {
   background: #fed301;
   position: relative;
@@ -1200,6 +1220,96 @@ main footer .down div {
   main .section1 header .nav1 .desktopMenu {
     display: block;
     margin: auto 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  main .section23::after {
+    top: 69%;
+  }
+  main .section23 .section3 .sidelestes {
+    margin-right: 10%;
+  }
+  main footer .left .epikinonia {
+    padding-left: 12vw;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  main .section23::after {
+    top: 80%;
+  }
+  main .mobileMenuCont .menu-mobile {
+    min-width: 70vw;
+  }
+  main .section23 .section2 .cont .left {
+    width: 100%;
+    padding: 0 10%;
+  }
+  main .section23 .section2 .cont .left h2 {
+    font-size: 7vw;
+  }
+  main .section23 .section2 .cont .left div {
+    font-size: 5vw;
+  }
+  main .section23 .section2 .cont .right {
+    padding: 0 10%;
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  main .section23 .section2 .cont .right h6 {
+    font-size: 18px;
+  }
+  main .section23 .section3 .sidelestes {
+    margin-right: 3vw;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  main .section23 .section3 .sidelestes .underlineCont .underline {
+    width: 93vw;
+  }
+  main footer .left .epikinonia {
+    padding-left: 4vw;
+  }
+  main footer .left .epikinonia .underlineCont .underline {
+    width: 94vw;
+  }
+  main footer .left .info {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  main .mobileMenuCont .menu-mobile {
+    min-width: 80vw;
+  }
+  main .section1 header .nav1 .logo img {
+    width: 187px;
+  }
+  main .section23 .section2 .cont .right div strong {
+    font-size: 22px;
+  }
+  main .section23 .section2 .cont .right div .yearly {
+    margin-left: 20px;
+  }
+  main .section23 .section3 .sidelestes {
+    margin-right: 3.5vw;
+  }
+  main footer {
+    overflow: hidden;
+  }
+  main footer .left .epikinonia {
+    padding-left: 5vw;
   }
 }
 /*# sourceMappingURL=style.css.map */
