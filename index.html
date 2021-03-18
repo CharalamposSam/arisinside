@@ -597,6 +597,7 @@
         })
 
         slider.addEventListener('touchmove', e => {
+            if (e.touches[0].clientY < journalistCont.getBoundingClientRect().top + 230) return
             if (!pressed) return
             e.preventDefault()
             x = e.targetTouches[0].pageX
