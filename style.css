@@ -1241,7 +1241,7 @@ main footer .down div {
 
 @media only screen and (max-width: 660px) {
   main .section23::after {
-    top: 80%;
+    top: 81%;
   }
   main .mobileMenuCont .menu-mobile {
     min-width: 70vw;
@@ -1294,6 +1294,9 @@ main footer .down div {
 }
 
 @media only screen and (max-width: 500px) {
+  main .section23::after {
+    top: 86%;
+  }
   main .mobileMenuCont .menu-mobile {
     min-width: 80vw;
   }
@@ -1308,6 +1311,8 @@ main footer .down div {
   }
   main .section23 .section3 .sidelestes {
     margin-right: 3.5vw;
+    -webkit-transform: translateY(0s);
+            transform: translateY(0s);
   }
   main footer {
     overflow: hidden;
