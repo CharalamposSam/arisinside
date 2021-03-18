@@ -422,12 +422,12 @@ main .section1 .issuuMobile {
   background: white;
   width: 120px;
   height: 70px;
-  display: -ms-grid;
-  display: grid;
+  display: none;
   place-items: center;
   font-family: mediumItalic;
   font-size: 13px;
   padding: 12px 0;
+  cursor: pointer;
 }
 
 main .section1 .issuuMobile img {
@@ -1220,6 +1220,10 @@ main footer .down div {
   main .section1 header .nav1 .desktopMenu {
     display: block;
     margin: auto 0;
+  }
+  main .section1 .issuuMobile {
+    display: -ms-grid;
+    display: grid;
   }
 }
 
