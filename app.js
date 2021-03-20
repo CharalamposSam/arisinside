@@ -8,6 +8,8 @@ window.addEventListener('load', () => {
 })
 
 window.addEventListener('beforeunload', () => {
+  header2.style.display = 'none'
+  document.body.style.opacity = '0'
   window.scrollTo(0, 0)
 })
 
@@ -195,6 +197,7 @@ close.addEventListener('click', () => {
 
 //Open/Close mobile menu
 const mobileburgerMenu = document.querySelectorAll('.burgerMenu')
+const bars = document.querySelectorAll('.burgerMenu div')
 const mobileMenu = document.querySelector('.mobileMenuCont')
 let open = false
 
@@ -204,6 +207,10 @@ mobileburgerMenu.forEach(menu => {
       document.body.style.overflow = 'hidden'
       mobileMenu.style.top = window.scrollY + 'px'
       mobileMenu.style.display = 'grid'
+
+      bars[0].style.opacity = '0'
+      bars[1].classList.remove('bar2hover')
+      bars[2].style.opacity = '0'
       setTimeout(() => {
         mobileMenu.style.opacity = '1'
       }, 100)
@@ -217,6 +224,9 @@ mobileburgerMenu.forEach(menu => {
 function closeMobileMenu() {
   document.body.style.overflow = 'auto'
   mobileMenu.style.opacity = '0'
+  bars[0].style.opacity = '1'
+  bars[1].classList.add('bar2hover')
+  bars[2].style.opacity = '1'
   setTimeout(() => {
     mobileMenu.style.display = 'none'
   }, 400)
