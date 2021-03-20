@@ -55,6 +55,62 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   background: #000000;
+  overflow: hidden;
+}
+
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  z-index: 1000000;
+}
+
+.preloader div {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.preloader div div {
+  margin-bottom: 20px;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border: 5px solid #222222;
+  border-top-color: #eec600;
+  border-radius: 50%;
+  -webkit-animation: animate 2s linear infinite;
+          animation: animate 2s linear infinite;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 ::-webkit-scrollbar {
@@ -127,8 +183,8 @@ main .header2 .nav2 {
 
 main .header2 .nav2 div {
   margin-right: 20px;
-  cursor: pointer;
   font-size: 14px;
+  cursor: pointer;
 }
 
 main .header2 .nav2 .issuu {
@@ -136,6 +192,17 @@ main .header2 .nav2 .issuu {
   max-width: 220px;
   height: 100%;
   background: white;
+  margin-right: 0;
+  margin-left: auto;
+  padding: 0 20px;
+}
+
+main .header2 .nav2 .issuu a {
+  width: 100%;
+  height: 100%;
+  color: black;
+  text-decoration: none;
+  display: block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,12 +212,9 @@ main .header2 .nav2 .issuu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 0;
-  margin-left: auto;
-  padding: 0 20px;
 }
 
-main .header2 .nav2 .issuu img {
+main .header2 .nav2 .issuu a img {
   width: 100%;
   max-width: 70px;
   display: block;
@@ -198,11 +262,11 @@ main .mobileMenuCont .menu-mobile {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  cursor: pointer;
 }
 
 main .mobileMenuCont .menu-mobile div {
   margin: 20px 0;
+  cursor: pointer;
 }
 
 main section {
@@ -280,7 +344,7 @@ main .section1 header .nav1 .menu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 2px;
+  margin-left: -1px;
 }
 
 main .section1 header .nav1 .menu div {
@@ -298,6 +362,16 @@ main .section1 header .nav1 .menu .issuu {
   height: 100%;
   background: white;
   margin-right: 0;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+main .section1 header .nav1 .menu .issuu a {
+  width: 100%;
+  height: 100%;
+  color: black;
+  text-decoration: none;
+  display: block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,11 +381,9 @@ main .section1 header .nav1 .menu .issuu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: mediumItalic;
-  font-size: 12px;
 }
 
-main .section1 header .nav1 .menu .issuu img {
+main .section1 header .nav1 .menu .issuu a img {
   width: 100%;
   max-width: 70px;
   display: block;
@@ -324,7 +396,8 @@ main .section1 header .nav1 .desktopMenu {
 }
 
 main .section1 h1 {
-  font-size: 40px;
+  width: 100%;
+  font-size: 65px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -360,6 +433,8 @@ main .section1 .hero img {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  -webkit-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
 }
 
 main .section1 .hero::before {
@@ -430,7 +505,12 @@ main .section1 .issuuMobile {
   cursor: pointer;
 }
 
-main .section1 .issuuMobile img {
+main .section1 .issuuMobile a {
+  color: black;
+  text-decoration: none;
+}
+
+main .section1 .issuuMobile a img {
   width: 88px;
   display: block;
 }
@@ -574,19 +654,6 @@ main .section23 .section2 .cont .right div button {
   -webkit-transform: translateX(-4px);
           transform: translateX(-4px);
   font-family: extraBoldItalic;
-}
-
-main .section23 .section2 .arrowSection {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-main .section23 .section2 .arrowSection img {
-  -webkit-animation: arrow-section 2s ease-in-out infinite;
-          animation: arrow-section 2s ease-in-out infinite;
 }
 
 main .section23 .section3 {
@@ -748,19 +815,6 @@ main .section23 .section3 .journalists .journalistsCont .journalist:last-child {
   margin-right: 0;
 }
 
-main .section23 .section3 .arrowSection {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-main .section23 .section3 .arrowSection img {
-  -webkit-animation: arrow-section 2s ease-in-out infinite;
-          animation: arrow-section 2s ease-in-out infinite;
-}
-
 main .section23::after {
   content: '';
   position: absolute;
@@ -865,14 +919,14 @@ main footer .left .info .details div span {
 main footer .left .info .mail {
   font-size: 26px;
   margin: 0 100px;
-  background: #1c1c1c;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   display: -ms-grid;
   display: grid;
   place-items: center;
   padding: 70px 100px;
   border-radius: 30px;
-  -webkit-box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 main footer .left .info .mail div {
@@ -898,6 +952,12 @@ main footer .left .info .mail div div::after {
   background-color: #fed301;
 }
 
+main footer .left .info .mail:hover {
+  -webkit-box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
+  background: #1c1c1c;
+}
+
 main footer .left .info .messanger {
   font-size: 26px;
   display: -webkit-box;
@@ -910,6 +970,12 @@ main footer .left .info .messanger {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  color: #fed301;
+  text-decoration: none;
+  padding: 70px 100px;
+  border-radius: 30px;
 }
 
 main footer .left .info .messanger div {
@@ -927,6 +993,12 @@ main footer .left .info .messanger div::after {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background-color: #fed301;
+}
+
+main footer .left .info .messanger:hover {
+  -webkit-box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
+  background: #1c1c1c;
 }
 
 main footer .right {
@@ -1001,6 +1073,11 @@ main footer .right .rightCont .instagram img {
   margin-right: 20px;
 }
 
+main footer .right .rightCont a {
+  color: black;
+  text-decoration: none;
+}
+
 main footer .down {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -1059,6 +1136,9 @@ main footer .down div {
 }
 
 @media only screen and (max-width: 1670px) {
+  main .section1 h1 {
+    font-size: 60px;
+  }
   main .section23 .section3 .journalists {
     width: 1670px;
   }
@@ -1066,7 +1146,10 @@ main footer .down div {
 
 @media only screen and (max-width: 1550px) {
   main .section23::after {
-    top: 54%;
+    top: 57%;
+  }
+  main .section1 h1 {
+    font-size: 48px;
   }
   main footer {
     -ms-grid-rows: auto auto auto;
@@ -1154,6 +1237,13 @@ main footer .down div {
 }
 
 @media only screen and (max-width: 1200px) {
+  main .section1 .tefhos {
+    top: 100px;
+    right: 10px;
+  }
+  main .section1 .tefhos img {
+    width: 85%;
+  }
   main .section23 .section2 .cont {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1183,6 +1273,20 @@ main footer .down div {
   main .section23 .section2 .cont .right {
     width: 600px;
   }
+  main .section23 .section3 .sidelestes {
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  main .section23 .section3 .sidelestes .underlineCont .underline {
+    left: -50%;
+  }
   main .section23::after {
     top: 59%;
     background-size: 200vw auto;
@@ -1198,12 +1302,22 @@ main footer .down div {
     text-align: center;
   }
   main footer .left .info .mail {
-    background: transparent;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    margin-top: 30px;
   }
   main footer .left .info .messanger {
     margin-top: 30px;
+  }
+  main footer .left .epikinonia {
+    padding-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main footer .left .epikinonia .underlineCont .underline {
+    left: -50%;
   }
 }
 
@@ -1228,21 +1342,38 @@ main footer .down div {
     display: -ms-grid;
     display: grid;
   }
+  main .section1 h1 {
+    font-size: 45px;
+  }
+  main .section1 .tefhos {
+    top: 100%;
+    left: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    background-color: #000000;
+    width: 120px;
+    height: 70px;
+  }
+  main .section1 .tefhos img {
+    display: none;
+    content: url("images/issuuMobile.png");
+  }
+  main .section1 .section3 .sidelestes {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 @media only screen and (max-width: 800px) {
   main .section23::after {
     top: 69%;
   }
-  main .section23 .section3 .sidelestes {
-    margin-right: 10%;
-  }
-  main footer .left .epikinonia {
-    padding-left: 12vw;
-  }
 }
 
 @media only screen and (max-width: 660px) {
+  main .section1 h1 {
+    font-size: 35px;
+  }
   main .section23::after {
     top: 81%;
   }
@@ -1278,18 +1409,14 @@ main footer .down div {
     font-size: 18px;
   }
   main .section23 .section3 .sidelestes {
-    margin-right: 3vw;
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   main .section23 .section3 .sidelestes .underlineCont .underline {
-    width: 93vw;
-  }
-  main footer .left .epikinonia {
-    padding-left: 4vw;
+    width: 200%;
   }
   main footer .left .epikinonia .underlineCont .underline {
-    width: 94vw;
+    width: 200%;
   }
   main footer .left .info {
     width: 100%;
@@ -1297,6 +1424,9 @@ main footer .down div {
 }
 
 @media only screen and (max-width: 500px) {
+  main .section1 h1 {
+    font-size: 25px;
+  }
   main .section23::after {
     top: 86%;
   }
@@ -1313,15 +1443,19 @@ main footer .down div {
     margin-left: 20px;
   }
   main .section23 .section3 .sidelestes {
-    margin-right: 3.5vw;
     -webkit-transform: translateY(0s);
             transform: translateY(0s);
+  }
+  main .section23 .section3 .sidelestes .underlineCont .underline {
+    width: 120%;
+    left: -10%;
   }
   main footer {
     overflow: hidden;
   }
-  main footer .left .epikinonia {
-    padding-left: 5vw;
+  main footer .left .epikinonia .underlineCont .underline {
+    width: 120%;
+    left: -10%;
   }
 }
 /*# sourceMappingURL=style.css.map */
