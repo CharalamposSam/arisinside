@@ -822,7 +822,7 @@ main .section23::after {
   left: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background: url("images/ArisLavara.png");
+  background: url("images/ArisLavara.jpg");
   background-repeat: no-repeat;
   width: 100%;
   height: 60%;
