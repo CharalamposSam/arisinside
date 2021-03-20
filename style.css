@@ -56,6 +56,8 @@ body {
   min-height: 100vh;
   background: #000000;
   overflow: hidden;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .preloader {
@@ -224,6 +226,44 @@ main .header2 .nav2 .issuu a img {
 main .header2 .mobileMenu {
   display: none;
   cursor: pointer;
+  height: 40px;
+  width: 37px;
+}
+
+main .header2 .mobileMenu div {
+  background-color: white;
+  height: 6px;
+}
+
+main .header2 .mobileMenu .bar1 {
+  width: 30px;
+  -webkit-transition: width 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  transition: width 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+main .header2 .mobileMenu .bar2 {
+  width: 37px;
+  margin: 7px 0;
+  -webkit-transition: width 0.3s ease-in-out 0.1s;
+  transition: width 0.3s ease-in-out 0.1s;
+}
+
+main .header2 .mobileMenu .bar3 {
+  width: 25px;
+  -webkit-transition: width 0.3s ease-in-out, 0.2s opacity 0.2s ease-in-out;
+  transition: width 0.3s ease-in-out, 0.2s opacity 0.2s ease-in-out;
+}
+
+main .mobileMenu:hover .bar1 {
+  width: 37px;
+}
+
+main .mobileMenu:hover .bar2hover {
+  width: 25px;
+}
+
+main .mobileMenu:hover .bar3 {
+  width: 30px;
 }
 
 main .mobileMenuCont {
@@ -603,10 +643,6 @@ main .section23 .section2 .cont .right div .price {
 main .section23 .section2 .cont .right div .price span {
   font-size: 45px;
   margin: 0;
-}
-
-main .section23 .section2 .cont .right div button {
-  cursor: pointer;
 }
 
 main .section23 .section2 .cont .right div .yearly {
