@@ -197,17 +197,17 @@ close.addEventListener('click', () => {
 
 //Open/Close mobile menu
 const mobileburgerMenu = document.querySelectorAll('.burgerMenu')
-const bars = document.querySelectorAll('.burgerMenu div')
 const mobileMenu = document.querySelector('.mobileMenuCont')
 let open = false
+let currentMenu
 
 mobileburgerMenu.forEach(menu => {
   menu.addEventListener('click', () => {
     if (!open) {
-      document.body.style.overflow = 'hidden'
       mobileMenu.style.top = window.scrollY + 'px'
       mobileMenu.style.display = 'grid'
-
+      currentMenu = menu
+      const bars = menu.querySelectorAll('div')
       bars[0].style.opacity = '0'
       bars[1].classList.remove('bar2hover')
       bars[2].style.opacity = '0'
@@ -216,14 +216,14 @@ mobileburgerMenu.forEach(menu => {
       }, 100)
       open = true
     } else {
-      closeMobileMenu()
+      closeMobileMenu(menu)
     }
   })
 })
 
-function closeMobileMenu() {
-  document.body.style.overflow = 'auto'
+function closeMobileMenu(menu) {
   mobileMenu.style.opacity = '0'
+  const bars = menu.querySelectorAll('div')
   bars[0].style.opacity = '1'
   bars[1].classList.add('bar2hover')
   bars[2].style.opacity = '1'
@@ -235,7 +235,13 @@ function closeMobileMenu() {
 
 window.addEventListener('resize', () => {
   if (open) {
-    closeMobileMenu()
+    closeMobileMenu(currentMenu)
+  }
+})
+
+window.addEventListener('scroll', () => {
+  if (open) {
+    closeMobileMenu(currentMenu)
   }
 })
 
