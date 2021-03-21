@@ -355,3 +355,40 @@ function checkBoundary() {
     journalists.style.left = `-${inner.width - outer.width}px`
   }
 }
+
+const mail1 = document.querySelector('.mail1')
+const mail2 = document.querySelector('.mail2')
+const copyMessage1 = document.querySelector('.mail1 .copyMessage')
+const copyMessage2 = document.querySelector('.mail2 .copyMessage')
+
+mail1.addEventListener('click', () => {
+  const textarea = document.createElement('textarea')
+  textarea.textContent = 'info@arisinside.gr'
+  document.body.appendChild(textarea)
+  textarea.style.cssText = 'width: 0;height: 0;'
+  textarea.select()
+  textarea.setSelectionRange(0, 99999)
+  document.execCommand('copy')
+  textarea.remove()
+
+  copyMessage1.style.opacity = '1'
+  setTimeout(() => {
+    copyMessage1.style.opacity = '0'
+  }, 2000)
+})
+
+mail2.addEventListener('click', () => {
+  const textarea = document.createElement('textarea')
+  textarea.textContent = 'marketing@arisinside.gr'
+  document.body.appendChild(textarea)
+  textarea.style.cssText = 'width: 0;height: 0;'
+  textarea.select()
+  textarea.setSelectionRange(0, 99999)
+  document.execCommand('copy')
+  textarea.remove()
+
+  copyMessage2.style.opacity = '1'
+  setTimeout(() => {
+    copyMessage2.style.opacity = '0'
+  }, 2000)
+})
