@@ -637,7 +637,9 @@ main .section23 .section2 .cont .left h2 .underlineCont {
 main .section23 .section2 .cont .left div {
   font-size: 25px;
   margin-top: 50px;
-  max-width: 70%;
+  max-width: 91%;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
   font-family: regular;
 }
 
@@ -875,6 +877,7 @@ main .section23 .section3 .journalists .journalistsCont .journalist p {
   font-family: regular;
   text-align: center;
   margin: 0;
+  max-width: 250px;
 }
 
 main .section23 .section3 .journalists .journalistsCont .journalist p a {
@@ -979,7 +982,8 @@ main footer .left .info {
 }
 
 main footer .left .info .details {
-  font-size: 20px;
+  font-size: 19px;
+  width: 182px;
 }
 
 main footer .left .info .details .font {
@@ -991,16 +995,16 @@ main footer .left .info .details div span {
 }
 
 main footer .left .info .mail {
-  font-size: 26px;
-  margin: 0 100px;
+  font-size: 24px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   display: -ms-grid;
   display: grid;
   place-items: center;
-  padding: 70px 100px;
+  padding: 50px 30px 70px;
   border-radius: 30px;
   cursor: pointer;
+  position: relative;
 }
 
 main footer .left .info .mail div {
@@ -1026,6 +1030,26 @@ main footer .left .info .mail div div::after {
   background-color: #fed301;
 }
 
+main footer .left .info .mail .copyMessage {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  font-size: 18px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+main footer .left .info .mail1 {
+  margin: 0 1%;
+}
+
+main footer .left .info .mail2 {
+  margin: 0;
+}
+
 main footer .left .info .mail:hover {
   -webkit-box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
@@ -1033,7 +1057,7 @@ main footer .left .info .mail:hover {
 }
 
 main footer .left .info .messanger {
-  font-size: 26px;
+  font-size: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1048,7 +1072,7 @@ main footer .left .info .messanger {
   transition: 0.2s ease-in-out;
   color: #fed301;
   text-decoration: none;
-  padding: 70px 100px;
+  padding: 50px 30px 70px;
   border-radius: 30px;
 }
 
@@ -1145,6 +1169,13 @@ main footer .right .rightCont .twitter img {
 main footer .right .rightCont .instagram img {
   height: 24px;
   margin-right: 20px;
+}
+
+main footer .right .rightCont .youtube img {
+  width: 27px;
+  margin-right: 19px;
+  -webkit-transform: translate(0px, 2px);
+          transform: translate(0px, 2px);
 }
 
 main footer .right .rightCont a {
@@ -1252,6 +1283,9 @@ main footer .down div {
   main footer .left .info {
     margin: 50px auto 30px;
   }
+  main footer .left .info .details {
+    width: 210px;
+  }
   main footer .right {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
@@ -1284,6 +1318,8 @@ main footer .down div {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-transform: translateY(23px);
+            transform: translateY(23px);
   }
   main footer .right .rightCont .theLeft img {
     width: 70px;
@@ -1343,6 +1379,8 @@ main footer .down div {
   main .section23 .section2 .cont .left div {
     max-width: 100%;
     margin-top: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   main .section23 .section2 .cont .right {
     width: 600px;
@@ -1355,8 +1393,6 @@ main footer .down div {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
   }
   main .section23 .section3 .sidelestes .underlineCont .underline {
     left: -50%;
@@ -1433,10 +1469,6 @@ main footer .down div {
     width: 100%;
     max-width: 300px;
   }
-  main .section1 .section3 .sidelestes {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -1460,14 +1492,14 @@ main footer .down div {
     padding: 0 10%;
   }
   main .section23 .section2 .cont .left h2 {
-    font-size: 7vw;
+    font-size: 6vw;
   }
   main .section23 .section2 .cont .left div {
-    font-size: 5vw;
+    font-size: 4vw;
   }
   main .section23 .section2 .cont .right {
     padding: 0 10%;
-    max-width: 100%;
+    max-width: 600px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1475,17 +1507,10 @@ main footer .down div {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 100%;
   }
   main .section23 .section2 .cont .right h6 {
     font-size: 18px;
-  }
-  main .section23 .section3 .sidelestes {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
   }
   main .section23 .section3 .sidelestes .underlineCont .underline {
     width: 200%;
@@ -1511,19 +1536,24 @@ main footer .down div {
   main .section1 header .nav1 .logo img {
     width: 187px;
   }
+  main .section23 .section2 .cont .left div {
+    font-size: 5vw;
+  }
+  main .section23 .section2 .cont .right {
+    padding: 0 10%;
+  }
   main .section23 .section2 .cont .right div strong {
     font-size: 22px;
   }
   main .section23 .section2 .cont .right div .yearly {
     margin-left: 20px;
   }
-  main .section23 .section3 .sidelestes {
-    -webkit-transform: translateY(0s);
-            transform: translateY(0s);
-  }
   main .section23 .section3 .sidelestes .underlineCont .underline {
     width: 120%;
     left: -10%;
+  }
+  main .section23::after {
+    top: 84%;
   }
   main footer {
     overflow: hidden;
